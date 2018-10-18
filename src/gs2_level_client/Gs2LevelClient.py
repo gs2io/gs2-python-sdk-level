@@ -41,17 +41,15 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.GetCurrentLevelMasterResult.GetCurrentLevelMasterResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.GetCurrentLevelMasterRequest import GetCurrentLevelMasterRequest
 
         from gs2_level_client.control.GetCurrentLevelMasterResult import GetCurrentLevelMasterResult
         return GetCurrentLevelMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/status/master",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/status/master",
             service=self.ENDPOINT,
             component=GetCurrentLevelMasterRequest.Constant.MODULE,
             target_function=GetCurrentLevelMasterRequest.Constant.FUNCTION,
@@ -72,14 +70,13 @@ class Gs2LevelClient(AbstractGs2Client):
             "settings": request.get_settings(),
         }
 
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.UpdateCurrentLevelMasterRequest import UpdateCurrentLevelMasterRequest
         from gs2_level_client.control.UpdateCurrentLevelMasterResult import UpdateCurrentLevelMasterResult
         return UpdateCurrentLevelMasterResult(self._do_post_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/status/master",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/status/master",
             service=self.ENDPOINT,
             component=UpdateCurrentLevelMasterRequest.Constant.MODULE,
             target_function=UpdateCurrentLevelMasterRequest.Constant.FUNCTION,
@@ -100,14 +97,13 @@ class Gs2LevelClient(AbstractGs2Client):
             "name": request.get_name(),
         }
 
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.CreateLevelTableMasterRequest import CreateLevelTableMasterRequest
         from gs2_level_client.control.CreateLevelTableMasterResult import CreateLevelTableMasterResult
         return CreateLevelTableMasterResult(self._do_post_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/levelTable",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/levelTable",
             service=self.ENDPOINT,
             component=CreateLevelTableMasterRequest.Constant.MODULE,
             target_function=CreateLevelTableMasterRequest.Constant.FUNCTION,
@@ -123,13 +119,12 @@ class Gs2LevelClient(AbstractGs2Client):
         :type request: gs2_level_client.control.DeleteLevelTableMasterRequest.DeleteLevelTableMasterRequest
         """
         query_strings = {}
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.DeleteLevelTableMasterRequest import DeleteLevelTableMasterRequest
         self._do_delete_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else url_encoder.encode(request.get_level_table_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else request.get_level_table_name())) + "",
             service=self.ENDPOINT,
             component=DeleteLevelTableMasterRequest.Constant.MODULE,
             target_function=DeleteLevelTableMasterRequest.Constant.FUNCTION,
@@ -145,19 +140,19 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.DescribeLevelTableMasterResult.DescribeLevelTableMasterResult
         """
-        query_strings = {
-            'pageToken': request.get_page_token(),
-            'limit': request.get_limit(),
-        }
-        headers = { 
-        }
+        query_strings = {}
+        if request.get_page_token() is not None:
+            query_strings['pageToken'] = request.get_page_token()
+        if request.get_limit() is not None:
+            query_strings['limit'] = request.get_limit()
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.DescribeLevelTableMasterRequest import DescribeLevelTableMasterRequest
 
         from gs2_level_client.control.DescribeLevelTableMasterResult import DescribeLevelTableMasterResult
         return DescribeLevelTableMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/levelTable",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/levelTable",
             service=self.ENDPOINT,
             component=DescribeLevelTableMasterRequest.Constant.MODULE,
             target_function=DescribeLevelTableMasterRequest.Constant.FUNCTION,
@@ -173,17 +168,15 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.GetLevelTableMasterResult.GetLevelTableMasterResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.GetLevelTableMasterRequest import GetLevelTableMasterRequest
 
         from gs2_level_client.control.GetLevelTableMasterResult import GetLevelTableMasterResult
         return GetLevelTableMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else url_encoder.encode(request.get_level_table_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else request.get_level_table_name())) + "",
             service=self.ENDPOINT,
             component=GetLevelTableMasterRequest.Constant.MODULE,
             target_function=GetLevelTableMasterRequest.Constant.FUNCTION,
@@ -204,14 +197,13 @@ class Gs2LevelClient(AbstractGs2Client):
             "threshold": request.get_threshold(),
         }
 
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.CreateLevelThresholdMasterRequest import CreateLevelThresholdMasterRequest
         from gs2_level_client.control.CreateLevelThresholdMasterResult import CreateLevelThresholdMasterResult
         return CreateLevelThresholdMasterResult(self._do_post_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else url_encoder.encode(request.get_level_table_name()))) + "/threshold",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else request.get_level_table_name())) + "/threshold",
             service=self.ENDPOINT,
             component=CreateLevelThresholdMasterRequest.Constant.MODULE,
             target_function=CreateLevelThresholdMasterRequest.Constant.FUNCTION,
@@ -227,13 +219,12 @@ class Gs2LevelClient(AbstractGs2Client):
         :type request: gs2_level_client.control.DeleteLevelThresholdMasterRequest.DeleteLevelThresholdMasterRequest
         """
         query_strings = {}
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.DeleteLevelThresholdMasterRequest import DeleteLevelThresholdMasterRequest
         self._do_delete_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else url_encoder.encode(request.get_level_table_name()))) + "/threshold/" + str(("null" if request.get_threshold() is None or request.get_threshold() == "" else url_encoder.encode(request.get_threshold()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else request.get_level_table_name())) + "/threshold/" + str(("null" if request.get_threshold() is None or request.get_threshold() == "" else request.get_threshold())) + "",
             service=self.ENDPOINT,
             component=DeleteLevelThresholdMasterRequest.Constant.MODULE,
             target_function=DeleteLevelThresholdMasterRequest.Constant.FUNCTION,
@@ -249,19 +240,19 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.DescribeLevelThresholdMasterResult.DescribeLevelThresholdMasterResult
         """
-        query_strings = {
-            'pageToken': request.get_page_token(),
-            'limit': request.get_limit(),
-        }
-        headers = { 
-        }
+        query_strings = {}
+        if request.get_page_token() is not None:
+            query_strings['pageToken'] = request.get_page_token()
+        if request.get_limit() is not None:
+            query_strings['limit'] = request.get_limit()
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.DescribeLevelThresholdMasterRequest import DescribeLevelThresholdMasterRequest
 
         from gs2_level_client.control.DescribeLevelThresholdMasterResult import DescribeLevelThresholdMasterResult
         return DescribeLevelThresholdMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else url_encoder.encode(request.get_level_table_name()))) + "/threshold",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else request.get_level_table_name())) + "/threshold",
             service=self.ENDPOINT,
             component=DescribeLevelThresholdMasterRequest.Constant.MODULE,
             target_function=DescribeLevelThresholdMasterRequest.Constant.FUNCTION,
@@ -277,17 +268,15 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.GetLevelThresholdMasterResult.GetLevelThresholdMasterResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.GetLevelThresholdMasterRequest import GetLevelThresholdMasterRequest
 
         from gs2_level_client.control.GetLevelThresholdMasterResult import GetLevelThresholdMasterResult
         return GetLevelThresholdMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else url_encoder.encode(request.get_level_table_name()))) + "/threshold/" + str(("null" if request.get_threshold() is None or request.get_threshold() == "" else url_encoder.encode(request.get_threshold()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/levelTable/" + str(("null" if request.get_level_table_name() is None or request.get_level_table_name() == "" else request.get_level_table_name())) + "/threshold/" + str(("null" if request.get_threshold() is None or request.get_threshold() == "" else request.get_threshold())) + "",
             service=self.ENDPOINT,
             component=GetLevelThresholdMasterRequest.Constant.MODULE,
             target_function=GetLevelThresholdMasterRequest.Constant.FUNCTION,
@@ -303,17 +292,15 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.ExportMasterResult.ExportMasterResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.ExportMasterRequest import ExportMasterRequest
 
         from gs2_level_client.control.ExportMasterResult import ExportMasterResult
         return ExportMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master",
             service=self.ENDPOINT,
             component=ExportMasterRequest.Constant.MODULE,
             target_function=ExportMasterRequest.Constant.FUNCTION,
@@ -351,8 +338,7 @@ class Gs2LevelClient(AbstractGs2Client):
             body["changeLevelCapTriggerScript"] = request.get_change_level_cap_trigger_script()
         if request.get_change_level_cap_done_trigger_script() is not None:
             body["changeLevelCapDoneTriggerScript"] = request.get_change_level_cap_done_trigger_script()
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.CreateResourcePoolRequest import CreateResourcePoolRequest
@@ -374,13 +360,12 @@ class Gs2LevelClient(AbstractGs2Client):
         :type request: gs2_level_client.control.DeleteResourcePoolRequest.DeleteResourcePoolRequest
         """
         query_strings = {}
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.DeleteResourcePoolRequest import DeleteResourcePoolRequest
         self._do_delete_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "",
             service=self.ENDPOINT,
             component=DeleteResourcePoolRequest.Constant.MODULE,
             target_function=DeleteResourcePoolRequest.Constant.FUNCTION,
@@ -396,12 +381,12 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.DescribeResourcePoolResult.DescribeResourcePoolResult
         """
-        query_strings = {
-            'pageToken': request.get_page_token(),
-            'limit': request.get_limit(),
-        }
-        headers = { 
-        }
+        query_strings = {}
+        if request.get_page_token() is not None:
+            query_strings['pageToken'] = request.get_page_token()
+        if request.get_limit() is not None:
+            query_strings['limit'] = request.get_limit()
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.DescribeResourcePoolRequest import DescribeResourcePoolRequest
@@ -424,17 +409,15 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.GetResourcePoolResult.GetResourcePoolResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.GetResourcePoolRequest import GetResourcePoolRequest
 
         from gs2_level_client.control.GetResourcePoolResult import GetResourcePoolResult
         return GetResourcePoolResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "",
             service=self.ENDPOINT,
             component=GetResourcePoolRequest.Constant.MODULE,
             target_function=GetResourcePoolRequest.Constant.FUNCTION,
@@ -450,17 +433,15 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.GetResourcePoolStatusResult.GetResourcePoolStatusResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.GetResourcePoolStatusRequest import GetResourcePoolStatusRequest
 
         from gs2_level_client.control.GetResourcePoolStatusResult import GetResourcePoolStatusResult
         return GetResourcePoolStatusResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/status",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/status",
             service=self.ENDPOINT,
             component=GetResourcePoolStatusRequest.Constant.MODULE,
             target_function=GetResourcePoolStatusRequest.Constant.FUNCTION,
@@ -496,14 +477,13 @@ class Gs2LevelClient(AbstractGs2Client):
             body["changeLevelCapTriggerScript"] = request.get_change_level_cap_trigger_script()
         if request.get_change_level_cap_done_trigger_script() is not None:
             body["changeLevelCapDoneTriggerScript"] = request.get_change_level_cap_done_trigger_script()
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.UpdateResourcePoolRequest import UpdateResourcePoolRequest
         from gs2_level_client.control.UpdateResourcePoolResult import UpdateResourcePoolResult
         return UpdateResourcePoolResult(self._do_put_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "",
             service=self.ENDPOINT,
             component=UpdateResourcePoolRequest.Constant.MODULE,
             target_function=UpdateResourcePoolRequest.Constant.FUNCTION,
@@ -531,14 +511,13 @@ class Gs2LevelClient(AbstractGs2Client):
             body["meta"] = request.get_meta()
         if request.get_default_experience() is not None:
             body["defaultExperience"] = request.get_default_experience()
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.CreateResourceTypeMasterRequest import CreateResourceTypeMasterRequest
         from gs2_level_client.control.CreateResourceTypeMasterResult import CreateResourceTypeMasterResult
         return CreateResourceTypeMasterResult(self._do_post_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/resourceType",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/resourceType",
             service=self.ENDPOINT,
             component=CreateResourceTypeMasterRequest.Constant.MODULE,
             target_function=CreateResourceTypeMasterRequest.Constant.FUNCTION,
@@ -554,13 +533,12 @@ class Gs2LevelClient(AbstractGs2Client):
         :type request: gs2_level_client.control.DeleteResourceTypeMasterRequest.DeleteResourceTypeMasterRequest
         """
         query_strings = {}
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.DeleteResourceTypeMasterRequest import DeleteResourceTypeMasterRequest
         self._do_delete_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else url_encoder.encode(request.get_resource_type_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else request.get_resource_type_name())) + "",
             service=self.ENDPOINT,
             component=DeleteResourceTypeMasterRequest.Constant.MODULE,
             target_function=DeleteResourceTypeMasterRequest.Constant.FUNCTION,
@@ -576,19 +554,19 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.DescribeResourceTypeMasterResult.DescribeResourceTypeMasterResult
         """
-        query_strings = {
-            'pageToken': request.get_page_token(),
-            'limit': request.get_limit(),
-        }
-        headers = { 
-        }
+        query_strings = {}
+        if request.get_page_token() is not None:
+            query_strings['pageToken'] = request.get_page_token()
+        if request.get_limit() is not None:
+            query_strings['limit'] = request.get_limit()
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.DescribeResourceTypeMasterRequest import DescribeResourceTypeMasterRequest
 
         from gs2_level_client.control.DescribeResourceTypeMasterResult import DescribeResourceTypeMasterResult
         return DescribeResourceTypeMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/resourceType",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/resourceType",
             service=self.ENDPOINT,
             component=DescribeResourceTypeMasterRequest.Constant.MODULE,
             target_function=DescribeResourceTypeMasterRequest.Constant.FUNCTION,
@@ -604,17 +582,15 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.GetResourceTypeMasterResult.GetResourceTypeMasterResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.GetResourceTypeMasterRequest import GetResourceTypeMasterRequest
 
         from gs2_level_client.control.GetResourceTypeMasterResult import GetResourceTypeMasterResult
         return GetResourceTypeMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else url_encoder.encode(request.get_resource_type_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else request.get_resource_type_name())) + "",
             service=self.ENDPOINT,
             component=GetResourceTypeMasterRequest.Constant.MODULE,
             target_function=GetResourceTypeMasterRequest.Constant.FUNCTION,
@@ -640,14 +616,13 @@ class Gs2LevelClient(AbstractGs2Client):
             body["meta"] = request.get_meta()
         if request.get_default_experience() is not None:
             body["defaultExperience"] = request.get_default_experience()
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.UpdateResourceTypeMasterRequest import UpdateResourceTypeMasterRequest
         from gs2_level_client.control.UpdateResourceTypeMasterResult import UpdateResourceTypeMasterResult
         return UpdateResourceTypeMasterResult(self._do_put_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/master/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else url_encoder.encode(request.get_resource_type_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/master/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else request.get_resource_type_name())) + "",
             service=self.ENDPOINT,
             component=UpdateResourceTypeMasterRequest.Constant.MODULE,
             target_function=UpdateResourceTypeMasterRequest.Constant.FUNCTION,
@@ -669,9 +644,9 @@ class Gs2LevelClient(AbstractGs2Client):
             "keyName": request.get_key_name(),
         }
 
-        headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
-        }
+        headers = {}
+        if request.get_access_token() is not None:
+            headers["X-GS2-ACCESS-TOKEN"] = request.get_access_token()
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.ChangeLevelCapByStampSheetRequest import ChangeLevelCapByStampSheetRequest
@@ -699,14 +674,13 @@ class Gs2LevelClient(AbstractGs2Client):
         body = { 
             "levelCap": request.get_level_cap(),
         }
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.ChangeLevelCapByUserIdRequest import ChangeLevelCapByUserIdRequest
         from gs2_level_client.control.ChangeLevelCapByUserIdResult import ChangeLevelCapByUserIdResult
         return ChangeLevelCapByUserIdResult(self._do_put_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/status/" + str(("null" if request.get_status_id() is None or request.get_status_id() == "" else url_encoder.encode(request.get_status_id()))) + "/levelCap",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/status/" + str(("null" if request.get_status_id() is None or request.get_status_id() == "" else request.get_status_id())) + "/levelCap",
             service=self.ENDPOINT,
             component=ChangeLevelCapByUserIdRequest.Constant.MODULE,
             target_function=ChangeLevelCapByUserIdRequest.Constant.FUNCTION,
@@ -728,14 +702,13 @@ class Gs2LevelClient(AbstractGs2Client):
         body = { 
             "levelCap": request.get_level_cap(),
         }
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.ChangeLevelCapByUserIdAndResourceTypeRequest import ChangeLevelCapByUserIdAndResourceTypeRequest
         from gs2_level_client.control.ChangeLevelCapByUserIdAndResourceTypeResult import ChangeLevelCapByUserIdAndResourceTypeResult
         return ChangeLevelCapByUserIdAndResourceTypeResult(self._do_put_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/status/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else url_encoder.encode(request.get_resource_type_name()))) + "/" + str(("null" if request.get_resource_id() is None or request.get_resource_id() == "" else url_encoder.encode(request.get_resource_id()))) + "/levelCap",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/status/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else request.get_resource_type_name())) + "/" + str(("null" if request.get_resource_id() is None or request.get_resource_id() == "" else request.get_resource_id())) + "/levelCap",
             service=self.ENDPOINT,
             component=ChangeLevelCapByUserIdAndResourceTypeRequest.Constant.MODULE,
             target_function=ChangeLevelCapByUserIdAndResourceTypeRequest.Constant.FUNCTION,
@@ -757,21 +730,23 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.DescribeStatusResult.DescribeStatusResult
         """
-        query_strings = {
-            'statusIds': request.get_status_ids(),
-            'pageToken': request.get_page_token(),
-            'limit': request.get_limit(),
-        }
-        headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
-        }
+        query_strings = {}
+        if request.get_status_ids() is not None:
+            query_strings['statusIds'] = u','.join(request.get_status_ids())
+        if request.get_page_token() is not None:
+            query_strings['pageToken'] = request.get_page_token()
+        if request.get_limit() is not None:
+            query_strings['limit'] = request.get_limit()
+        headers = {}
+        if request.get_access_token() is not None:
+            headers["X-GS2-ACCESS-TOKEN"] = request.get_access_token()
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.DescribeStatusRequest import DescribeStatusRequest
 
         from gs2_level_client.control.DescribeStatusResult import DescribeStatusResult
         return DescribeStatusResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/my/status",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/my/status",
             service=self.ENDPOINT,
             component=DescribeStatusRequest.Constant.MODULE,
             target_function=DescribeStatusRequest.Constant.FUNCTION,
@@ -793,20 +768,21 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.DescribeStatusByUserIdResult.DescribeStatusByUserIdResult
         """
-        query_strings = {
-            'statusIds': request.get_status_ids(),
-            'pageToken': request.get_page_token(),
-            'limit': request.get_limit(),
-        }
-        headers = { 
-        }
+        query_strings = {}
+        if request.get_status_ids() is not None:
+            query_strings['statusIds'] = u','.join(request.get_status_ids())
+        if request.get_page_token() is not None:
+            query_strings['pageToken'] = request.get_page_token()
+        if request.get_limit() is not None:
+            query_strings['limit'] = request.get_limit()
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.DescribeStatusByUserIdRequest import DescribeStatusByUserIdRequest
 
         from gs2_level_client.control.DescribeStatusByUserIdResult import DescribeStatusByUserIdResult
         return DescribeStatusByUserIdResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/status",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/status",
             service=self.ENDPOINT,
             component=DescribeStatusByUserIdRequest.Constant.MODULE,
             target_function=DescribeStatusByUserIdRequest.Constant.FUNCTION,
@@ -824,18 +800,17 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.GetStatusResult.GetStatusResult
         """
-        query_strings = {
-        }
-        headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
-        }
+        query_strings = {}
+        headers = {}
+        if request.get_access_token() is not None:
+            headers["X-GS2-ACCESS-TOKEN"] = request.get_access_token()
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.GetStatusRequest import GetStatusRequest
 
         from gs2_level_client.control.GetStatusResult import GetStatusResult
         return GetStatusResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/my/status/" + str(("null" if request.get_status_id() is None or request.get_status_id() == "" else url_encoder.encode(request.get_status_id()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/my/status/" + str(("null" if request.get_status_id() is None or request.get_status_id() == "" else request.get_status_id())) + "",
             service=self.ENDPOINT,
             component=GetStatusRequest.Constant.MODULE,
             target_function=GetStatusRequest.Constant.FUNCTION,
@@ -853,18 +828,17 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.GetStatusByResourceTypeResult.GetStatusByResourceTypeResult
         """
-        query_strings = {
-        }
-        headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
-        }
+        query_strings = {}
+        headers = {}
+        if request.get_access_token() is not None:
+            headers["X-GS2-ACCESS-TOKEN"] = request.get_access_token()
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.GetStatusByResourceTypeRequest import GetStatusByResourceTypeRequest
 
         from gs2_level_client.control.GetStatusByResourceTypeResult import GetStatusByResourceTypeResult
         return GetStatusByResourceTypeResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/my/status/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else url_encoder.encode(request.get_resource_type_name()))) + "/" + str(("null" if request.get_resource_id() is None or request.get_resource_id() == "" else url_encoder.encode(request.get_resource_id()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/my/status/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else request.get_resource_type_name())) + "/" + str(("null" if request.get_resource_id() is None or request.get_resource_id() == "" else request.get_resource_id())) + "",
             service=self.ENDPOINT,
             component=GetStatusByResourceTypeRequest.Constant.MODULE,
             target_function=GetStatusByResourceTypeRequest.Constant.FUNCTION,
@@ -882,17 +856,15 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.GetStatusByUserIdResult.GetStatusByUserIdResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.GetStatusByUserIdRequest import GetStatusByUserIdRequest
 
         from gs2_level_client.control.GetStatusByUserIdResult import GetStatusByUserIdResult
         return GetStatusByUserIdResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/status/" + str(("null" if request.get_status_id() is None or request.get_status_id() == "" else url_encoder.encode(request.get_status_id()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/status/" + str(("null" if request.get_status_id() is None or request.get_status_id() == "" else request.get_status_id())) + "",
             service=self.ENDPOINT,
             component=GetStatusByUserIdRequest.Constant.MODULE,
             target_function=GetStatusByUserIdRequest.Constant.FUNCTION,
@@ -910,17 +882,15 @@ class Gs2LevelClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_level_client.control.GetStatusByUserIdAndResourceTypeResult.GetStatusByUserIdAndResourceTypeResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.GetStatusByUserIdAndResourceTypeRequest import GetStatusByUserIdAndResourceTypeRequest
 
         from gs2_level_client.control.GetStatusByUserIdAndResourceTypeResult import GetStatusByUserIdAndResourceTypeResult
         return GetStatusByUserIdAndResourceTypeResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/status/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else url_encoder.encode(request.get_resource_type_name()))) + "/" + str(("null" if request.get_resource_id() is None or request.get_resource_id() == "" else url_encoder.encode(request.get_resource_id()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/status/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else request.get_resource_type_name())) + "/" + str(("null" if request.get_resource_id() is None or request.get_resource_id() == "" else request.get_resource_id())) + "",
             service=self.ENDPOINT,
             component=GetStatusByUserIdAndResourceTypeRequest.Constant.MODULE,
             target_function=GetStatusByUserIdAndResourceTypeRequest.Constant.FUNCTION,
@@ -942,9 +912,9 @@ class Gs2LevelClient(AbstractGs2Client):
             "keyName": request.get_key_name(),
         }
 
-        headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
-        }
+        headers = {}
+        if request.get_access_token() is not None:
+            headers["X-GS2-ACCESS-TOKEN"] = request.get_access_token()
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.IncreaseExperienceByStampSheetRequest import IncreaseExperienceByStampSheetRequest
@@ -973,14 +943,13 @@ class Gs2LevelClient(AbstractGs2Client):
             "value": request.get_value(),
         }
 
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.IncreaseExperienceByUserIdRequest import IncreaseExperienceByUserIdRequest
         from gs2_level_client.control.IncreaseExperienceByUserIdResult import IncreaseExperienceByUserIdResult
         return IncreaseExperienceByUserIdResult(self._do_post_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/status/" + str(("null" if request.get_status_id() is None or request.get_status_id() == "" else url_encoder.encode(request.get_status_id()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/status/" + str(("null" if request.get_status_id() is None or request.get_status_id() == "" else request.get_status_id())) + "",
             service=self.ENDPOINT,
             component=IncreaseExperienceByUserIdRequest.Constant.MODULE,
             target_function=IncreaseExperienceByUserIdRequest.Constant.FUNCTION,
@@ -1003,14 +972,13 @@ class Gs2LevelClient(AbstractGs2Client):
             "value": request.get_value(),
         }
 
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.IncreaseExperienceByUserIdAndResourceTypeRequest import IncreaseExperienceByUserIdAndResourceTypeRequest
         from gs2_level_client.control.IncreaseExperienceByUserIdAndResourceTypeResult import IncreaseExperienceByUserIdAndResourceTypeResult
         return IncreaseExperienceByUserIdAndResourceTypeResult(self._do_post_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/status/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else url_encoder.encode(request.get_resource_type_name()))) + "/" + str(("null" if request.get_resource_id() is None or request.get_resource_id() == "" else url_encoder.encode(request.get_resource_id()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/status/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else request.get_resource_type_name())) + "/" + str(("null" if request.get_resource_id() is None or request.get_resource_id() == "" else request.get_resource_id())) + "",
             service=self.ENDPOINT,
             component=IncreaseExperienceByUserIdAndResourceTypeRequest.Constant.MODULE,
             target_function=IncreaseExperienceByUserIdAndResourceTypeRequest.Constant.FUNCTION,
@@ -1032,14 +1000,13 @@ class Gs2LevelClient(AbstractGs2Client):
         body = { 
             "experience": request.get_experience(),
         }
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.SetExperienceByUserIdRequest import SetExperienceByUserIdRequest
         from gs2_level_client.control.SetExperienceByUserIdResult import SetExperienceByUserIdResult
         return SetExperienceByUserIdResult(self._do_put_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/status/" + str(("null" if request.get_status_id() is None or request.get_status_id() == "" else url_encoder.encode(request.get_status_id()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/status/" + str(("null" if request.get_status_id() is None or request.get_status_id() == "" else request.get_status_id())) + "",
             service=self.ENDPOINT,
             component=SetExperienceByUserIdRequest.Constant.MODULE,
             target_function=SetExperienceByUserIdRequest.Constant.FUNCTION,
@@ -1061,14 +1028,13 @@ class Gs2LevelClient(AbstractGs2Client):
         body = { 
             "experience": request.get_experience(),
         }
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_level_client.control.SetExperienceByUserIdAndResourceTypeRequest import SetExperienceByUserIdAndResourceTypeRequest
         from gs2_level_client.control.SetExperienceByUserIdAndResourceTypeResult import SetExperienceByUserIdAndResourceTypeResult
         return SetExperienceByUserIdAndResourceTypeResult(self._do_put_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else url_encoder.encode(request.get_resource_pool_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/status/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else url_encoder.encode(request.get_resource_type_name()))) + "/" + str(("null" if request.get_resource_id() is None or request.get_resource_id() == "" else url_encoder.encode(request.get_resource_id()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/resourcePool/" + str(("null" if request.get_resource_pool_name() is None or request.get_resource_pool_name() == "" else request.get_resource_pool_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/status/resourceType/" + str(("null" if request.get_resource_type_name() is None or request.get_resource_type_name() == "" else request.get_resource_type_name())) + "/" + str(("null" if request.get_resource_id() is None or request.get_resource_id() == "" else request.get_resource_id())) + "",
             service=self.ENDPOINT,
             component=SetExperienceByUserIdAndResourceTypeRequest.Constant.MODULE,
             target_function=SetExperienceByUserIdAndResourceTypeRequest.Constant.FUNCTION,

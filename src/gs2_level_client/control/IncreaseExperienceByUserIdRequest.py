@@ -61,7 +61,7 @@ class IncreaseExperienceByUserIdRequest(Gs2BasicRequest):
         :param resource_pool_name: リソースプール
         :type resource_pool_name: unicode
         """
-        if resource_pool_name and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
+        if resource_pool_name is not None and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
             raise TypeError(type(resource_pool_name))
         self.__resource_pool_name = resource_pool_name
 
@@ -90,7 +90,7 @@ class IncreaseExperienceByUserIdRequest(Gs2BasicRequest):
         :param user_id: ステータス
         :type user_id: unicode
         """
-        if user_id and not (isinstance(user_id, str) or isinstance(user_id, unicode)):
+        if user_id is not None and not (isinstance(user_id, str) or isinstance(user_id, unicode)):
             raise TypeError(type(user_id))
         self.__user_id = user_id
 
@@ -119,7 +119,7 @@ class IncreaseExperienceByUserIdRequest(Gs2BasicRequest):
         :param status_id: ステータスID
         :type status_id: unicode
         """
-        if status_id and not (isinstance(status_id, str) or isinstance(status_id, unicode)):
+        if status_id is not None and not (isinstance(status_id, str) or isinstance(status_id, unicode)):
             raise TypeError(type(status_id))
         self.__status_id = status_id
 
@@ -148,7 +148,7 @@ class IncreaseExperienceByUserIdRequest(Gs2BasicRequest):
         :param value: 経験値の加算量
         :type value: long
         """
-        if value and not (isinstance(value, int) or isinstance(value, long)):
+        if value is not None and not (isinstance(value, int) or isinstance(value, long)):
             raise TypeError(type(value))
         self.__value = value
 

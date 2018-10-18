@@ -65,7 +65,7 @@ class DescribeStatusByUserIdRequest(Gs2BasicRequest):
         :param resource_pool_name: リソースプール
         :type resource_pool_name: unicode
         """
-        if resource_pool_name and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
+        if resource_pool_name is not None and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
             raise TypeError(type(resource_pool_name))
         self.__resource_pool_name = resource_pool_name
 
@@ -94,7 +94,7 @@ class DescribeStatusByUserIdRequest(Gs2BasicRequest):
         :param user_id: ユーザID
         :type user_id: unicode
         """
-        if user_id and not (isinstance(user_id, str) or isinstance(user_id, unicode)):
+        if user_id is not None and not (isinstance(user_id, str) or isinstance(user_id, unicode)):
             raise TypeError(type(user_id))
         self.__user_id = user_id
 
@@ -111,27 +111,27 @@ class DescribeStatusByUserIdRequest(Gs2BasicRequest):
 
     def get_status_ids(self):
         """
-        リソースIDリスト(カンマ区切り)を取得
-        :return: リソースIDリスト(カンマ区切り)
-        :rtype: unicode
+        ステータスIDリストを取得
+        :return: ステータスIDリスト
+        :rtype: list[unicode]
         """
         return self.__status_ids
 
     def set_status_ids(self, status_ids):
         """
-        リソースIDリスト(カンマ区切り)を設定
-        :param status_ids: リソースIDリスト(カンマ区切り)
-        :type status_ids: unicode
+        ステータスIDリストを設定
+        :param status_ids: ステータスIDリスト
+        :type status_ids: list[unicode]
         """
-        if status_ids and not (isinstance(status_ids, str) or isinstance(status_ids, unicode)):
+        if status_ids is not None and not isinstance(status_ids, list):
             raise TypeError(type(status_ids))
         self.__status_ids = status_ids
 
     def with_status_ids(self, status_ids):
         """
-        リソースIDリスト(カンマ区切り)を設定
-        :param status_ids: リソースIDリスト(カンマ区切り)
-        :type status_ids: unicode
+        ステータスIDリストを設定
+        :param status_ids: ステータスIDリスト
+        :type status_ids: list[unicode]
         :return: this
         :rtype: DescribeStatusByUserIdRequest
         """
@@ -152,7 +152,7 @@ class DescribeStatusByUserIdRequest(Gs2BasicRequest):
         :param page_token: データの取得を開始する位置を指定するトークン
         :type page_token: unicode
         """
-        if page_token and not (isinstance(page_token, str) or isinstance(page_token, unicode)):
+        if page_token is not None and not (isinstance(page_token, str) or isinstance(page_token, unicode)):
             raise TypeError(type(page_token))
         self.__page_token = page_token
 
@@ -181,7 +181,7 @@ class DescribeStatusByUserIdRequest(Gs2BasicRequest):
         :param limit: データの取得件数
         :type limit: int
         """
-        if limit and not isinstance(limit, int):
+        if limit is not None and not isinstance(limit, int):
             raise TypeError(type(limit))
         self.__limit = limit
 

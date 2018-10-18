@@ -53,7 +53,7 @@ class CreateLevelTableMasterRequest(Gs2BasicRequest):
         :param resource_pool_name: リソースプール
         :type resource_pool_name: unicode
         """
-        if resource_pool_name and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
+        if resource_pool_name is not None and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
             raise TypeError(type(resource_pool_name))
         self.__resource_pool_name = resource_pool_name
 
@@ -82,7 +82,7 @@ class CreateLevelTableMasterRequest(Gs2BasicRequest):
         :param name: レベルテーブル名
         :type name: unicode
         """
-        if name and not (isinstance(name, str) or isinstance(name, unicode)):
+        if name is not None and not (isinstance(name, str) or isinstance(name, unicode)):
             raise TypeError(type(name))
         self.__name = name
 

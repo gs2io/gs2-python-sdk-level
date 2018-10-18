@@ -53,7 +53,7 @@ class DeleteLevelTableMasterRequest(Gs2BasicRequest):
         :param resource_pool_name: リソースプール
         :type resource_pool_name: unicode
         """
-        if resource_pool_name and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
+        if resource_pool_name is not None and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
             raise TypeError(type(resource_pool_name))
         self.__resource_pool_name = resource_pool_name
 
@@ -82,7 +82,7 @@ class DeleteLevelTableMasterRequest(Gs2BasicRequest):
         :param level_table_name: レベルテーブル
         :type level_table_name: unicode
         """
-        if level_table_name and not (isinstance(level_table_name, str) or isinstance(level_table_name, unicode)):
+        if level_table_name is not None and not (isinstance(level_table_name, str) or isinstance(level_table_name, unicode)):
             raise TypeError(type(level_table_name))
         self.__level_table_name = level_table_name
 

@@ -65,7 +65,7 @@ class IncreaseExperienceByUserIdAndResourceTypeRequest(Gs2BasicRequest):
         :param resource_pool_name: リソースプール
         :type resource_pool_name: unicode
         """
-        if resource_pool_name and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
+        if resource_pool_name is not None and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
             raise TypeError(type(resource_pool_name))
         self.__resource_pool_name = resource_pool_name
 
@@ -94,7 +94,7 @@ class IncreaseExperienceByUserIdAndResourceTypeRequest(Gs2BasicRequest):
         :param resource_type_name: リソースタイプ
         :type resource_type_name: unicode
         """
-        if resource_type_name and not (isinstance(resource_type_name, str) or isinstance(resource_type_name, unicode)):
+        if resource_type_name is not None and not (isinstance(resource_type_name, str) or isinstance(resource_type_name, unicode)):
             raise TypeError(type(resource_type_name))
         self.__resource_type_name = resource_type_name
 
@@ -123,7 +123,7 @@ class IncreaseExperienceByUserIdAndResourceTypeRequest(Gs2BasicRequest):
         :param resource_id: リソースID
         :type resource_id: unicode
         """
-        if resource_id and not (isinstance(resource_id, str) or isinstance(resource_id, unicode)):
+        if resource_id is not None and not (isinstance(resource_id, str) or isinstance(resource_id, unicode)):
             raise TypeError(type(resource_id))
         self.__resource_id = resource_id
 
@@ -152,7 +152,7 @@ class IncreaseExperienceByUserIdAndResourceTypeRequest(Gs2BasicRequest):
         :param user_id: ステータス
         :type user_id: unicode
         """
-        if user_id and not (isinstance(user_id, str) or isinstance(user_id, unicode)):
+        if user_id is not None and not (isinstance(user_id, str) or isinstance(user_id, unicode)):
             raise TypeError(type(user_id))
         self.__user_id = user_id
 
@@ -181,7 +181,7 @@ class IncreaseExperienceByUserIdAndResourceTypeRequest(Gs2BasicRequest):
         :param value: 経験値の加算量
         :type value: long
         """
-        if value and not (isinstance(value, int) or isinstance(value, long)):
+        if value is not None and not (isinstance(value, int) or isinstance(value, long)):
             raise TypeError(type(value))
         self.__value = value
 

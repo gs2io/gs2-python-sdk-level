@@ -73,7 +73,7 @@ class UpdateResourceTypeMasterRequest(Gs2BasicRequest):
         :param resource_pool_name: リソースプール
         :type resource_pool_name: unicode
         """
-        if resource_pool_name and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
+        if resource_pool_name is not None and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
             raise TypeError(type(resource_pool_name))
         self.__resource_pool_name = resource_pool_name
 
@@ -102,7 +102,7 @@ class UpdateResourceTypeMasterRequest(Gs2BasicRequest):
         :param resource_type_name: リソースタイプ
         :type resource_type_name: unicode
         """
-        if resource_type_name and not (isinstance(resource_type_name, str) or isinstance(resource_type_name, unicode)):
+        if resource_type_name is not None and not (isinstance(resource_type_name, str) or isinstance(resource_type_name, unicode)):
             raise TypeError(type(resource_type_name))
         self.__resource_type_name = resource_type_name
 
@@ -131,7 +131,7 @@ class UpdateResourceTypeMasterRequest(Gs2BasicRequest):
         :param meta: メタデータ
         :type meta: unicode
         """
-        if meta and not (isinstance(meta, str) or isinstance(meta, unicode)):
+        if meta is not None and not (isinstance(meta, str) or isinstance(meta, unicode)):
             raise TypeError(type(meta))
         self.__meta = meta
 
@@ -160,7 +160,7 @@ class UpdateResourceTypeMasterRequest(Gs2BasicRequest):
         :param level_table_name: レベルテーブル名
         :type level_table_name: unicode
         """
-        if level_table_name and not (isinstance(level_table_name, str) or isinstance(level_table_name, unicode)):
+        if level_table_name is not None and not (isinstance(level_table_name, str) or isinstance(level_table_name, unicode)):
             raise TypeError(type(level_table_name))
         self.__level_table_name = level_table_name
 
@@ -189,7 +189,7 @@ class UpdateResourceTypeMasterRequest(Gs2BasicRequest):
         :param default_experience: デフォルト取得済み経験値
         :type default_experience: long
         """
-        if default_experience and not (isinstance(default_experience, int) or isinstance(default_experience, long)):
+        if default_experience is not None and not (isinstance(default_experience, int) or isinstance(default_experience, long)):
             raise TypeError(type(default_experience))
         self.__default_experience = default_experience
 
@@ -218,7 +218,7 @@ class UpdateResourceTypeMasterRequest(Gs2BasicRequest):
         :param default_level_cap: デフォルトレベルキャップ
         :type default_level_cap: int
         """
-        if default_level_cap and not isinstance(default_level_cap, int):
+        if default_level_cap is not None and not isinstance(default_level_cap, int):
             raise TypeError(type(default_level_cap))
         self.__default_level_cap = default_level_cap
 
@@ -247,7 +247,7 @@ class UpdateResourceTypeMasterRequest(Gs2BasicRequest):
         :param max_level_cap: 最大レベルキャップ
         :type max_level_cap: int
         """
-        if max_level_cap and not isinstance(max_level_cap, int):
+        if max_level_cap is not None and not isinstance(max_level_cap, int):
             raise TypeError(type(max_level_cap))
         self.__max_level_cap = max_level_cap
 

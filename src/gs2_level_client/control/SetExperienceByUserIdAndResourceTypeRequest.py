@@ -65,7 +65,7 @@ class SetExperienceByUserIdAndResourceTypeRequest(Gs2BasicRequest):
         :param resource_pool_name: リソースプール
         :type resource_pool_name: unicode
         """
-        if resource_pool_name and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
+        if resource_pool_name is not None and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
             raise TypeError(type(resource_pool_name))
         self.__resource_pool_name = resource_pool_name
 
@@ -94,7 +94,7 @@ class SetExperienceByUserIdAndResourceTypeRequest(Gs2BasicRequest):
         :param resource_type_name: リソースタイプ
         :type resource_type_name: unicode
         """
-        if resource_type_name and not (isinstance(resource_type_name, str) or isinstance(resource_type_name, unicode)):
+        if resource_type_name is not None and not (isinstance(resource_type_name, str) or isinstance(resource_type_name, unicode)):
             raise TypeError(type(resource_type_name))
         self.__resource_type_name = resource_type_name
 
@@ -123,7 +123,7 @@ class SetExperienceByUserIdAndResourceTypeRequest(Gs2BasicRequest):
         :param resource_id: リソースID
         :type resource_id: unicode
         """
-        if resource_id and not (isinstance(resource_id, str) or isinstance(resource_id, unicode)):
+        if resource_id is not None and not (isinstance(resource_id, str) or isinstance(resource_id, unicode)):
             raise TypeError(type(resource_id))
         self.__resource_id = resource_id
 
@@ -152,7 +152,7 @@ class SetExperienceByUserIdAndResourceTypeRequest(Gs2BasicRequest):
         :param user_id: ステータス
         :type user_id: unicode
         """
-        if user_id and not (isinstance(user_id, str) or isinstance(user_id, unicode)):
+        if user_id is not None and not (isinstance(user_id, str) or isinstance(user_id, unicode)):
             raise TypeError(type(user_id))
         self.__user_id = user_id
 
@@ -181,7 +181,7 @@ class SetExperienceByUserIdAndResourceTypeRequest(Gs2BasicRequest):
         :param experience: 新しい累計獲得経験値
         :type experience: long
         """
-        if experience and not (isinstance(experience, int) or isinstance(experience, long)):
+        if experience is not None and not (isinstance(experience, int) or isinstance(experience, long)):
             raise TypeError(type(experience))
         self.__experience = experience
 

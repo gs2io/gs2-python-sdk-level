@@ -6,7 +6,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='gs2-python-sdk-level',
-    version='1.1.10',
+    version='1.3.1',
     package_dir={'': 'src'},
     packages=[
         "",
@@ -15,7 +15,7 @@ setup(
         "gs2_level_client.model",
     ],
     install_requires=[
-        'gs2-python-sdk-core >= 1.1.10',
+        'gs2-python-sdk-core >= 1.3.0',
     ],
     tests_require=[],
     license='Apache License 2.0',
