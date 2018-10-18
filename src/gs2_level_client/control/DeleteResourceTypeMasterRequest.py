@@ -53,7 +53,7 @@ class DeleteResourceTypeMasterRequest(Gs2BasicRequest):
         :param resource_pool_name: リソースプール
         :type resource_pool_name: unicode
         """
-        if resource_pool_name and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
+        if resource_pool_name is not None and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
             raise TypeError(type(resource_pool_name))
         self.__resource_pool_name = resource_pool_name
 
@@ -82,7 +82,7 @@ class DeleteResourceTypeMasterRequest(Gs2BasicRequest):
         :param resource_type_name: リソースタイプ
         :type resource_type_name: unicode
         """
-        if resource_type_name and not (isinstance(resource_type_name, str) or isinstance(resource_type_name, unicode)):
+        if resource_type_name is not None and not (isinstance(resource_type_name, str) or isinstance(resource_type_name, unicode)):
             raise TypeError(type(resource_type_name))
         self.__resource_type_name = resource_type_name
 

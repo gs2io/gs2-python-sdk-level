@@ -85,7 +85,7 @@ class UpdateResourcePoolRequest(Gs2BasicRequest):
         :param resource_pool_name: リソースプール
         :type resource_pool_name: unicode
         """
-        if resource_pool_name and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
+        if resource_pool_name is not None and not (isinstance(resource_pool_name, str) or isinstance(resource_pool_name, unicode)):
             raise TypeError(type(resource_pool_name))
         self.__resource_pool_name = resource_pool_name
 
@@ -114,7 +114,7 @@ class UpdateResourcePoolRequest(Gs2BasicRequest):
         :param description: 説明文
         :type description: unicode
         """
-        if description and not (isinstance(description, str) or isinstance(description, unicode)):
+        if description is not None and not (isinstance(description, str) or isinstance(description, unicode)):
             raise TypeError(type(description))
         self.__description = description
 
@@ -143,7 +143,7 @@ class UpdateResourcePoolRequest(Gs2BasicRequest):
         :param service_class: サービスクラス
         :type service_class: unicode
         """
-        if service_class and not (isinstance(service_class, str) or isinstance(service_class, unicode)):
+        if service_class is not None and not (isinstance(service_class, str) or isinstance(service_class, unicode)):
             raise TypeError(type(service_class))
         self.__service_class = service_class
 
@@ -172,7 +172,7 @@ class UpdateResourcePoolRequest(Gs2BasicRequest):
         :param level_cap_script: レベルキャップ取得時 に実行されるGS2-Script
         :type level_cap_script: unicode
         """
-        if level_cap_script and not (isinstance(level_cap_script, str) or isinstance(level_cap_script, unicode)):
+        if level_cap_script is not None and not (isinstance(level_cap_script, str) or isinstance(level_cap_script, unicode)):
             raise TypeError(type(level_cap_script))
         self.__level_cap_script = level_cap_script
 
@@ -201,7 +201,7 @@ class UpdateResourcePoolRequest(Gs2BasicRequest):
         :param change_experience_trigger_script: 経験値変化時 に実行されるGS2-Script
         :type change_experience_trigger_script: unicode
         """
-        if change_experience_trigger_script and not (isinstance(change_experience_trigger_script, str) or isinstance(change_experience_trigger_script, unicode)):
+        if change_experience_trigger_script is not None and not (isinstance(change_experience_trigger_script, str) or isinstance(change_experience_trigger_script, unicode)):
             raise TypeError(type(change_experience_trigger_script))
         self.__change_experience_trigger_script = change_experience_trigger_script
 
@@ -230,7 +230,7 @@ class UpdateResourcePoolRequest(Gs2BasicRequest):
         :param change_experience_done_trigger_script: 経験値変化完了時 に実行されるGS2-Script
         :type change_experience_done_trigger_script: unicode
         """
-        if change_experience_done_trigger_script and not (isinstance(change_experience_done_trigger_script, str) or isinstance(change_experience_done_trigger_script, unicode)):
+        if change_experience_done_trigger_script is not None and not (isinstance(change_experience_done_trigger_script, str) or isinstance(change_experience_done_trigger_script, unicode)):
             raise TypeError(type(change_experience_done_trigger_script))
         self.__change_experience_done_trigger_script = change_experience_done_trigger_script
 
@@ -259,7 +259,7 @@ class UpdateResourcePoolRequest(Gs2BasicRequest):
         :param change_level_trigger_script: レベル変化時 に実行されるGS2-Script
         :type change_level_trigger_script: unicode
         """
-        if change_level_trigger_script and not (isinstance(change_level_trigger_script, str) or isinstance(change_level_trigger_script, unicode)):
+        if change_level_trigger_script is not None and not (isinstance(change_level_trigger_script, str) or isinstance(change_level_trigger_script, unicode)):
             raise TypeError(type(change_level_trigger_script))
         self.__change_level_trigger_script = change_level_trigger_script
 
@@ -288,7 +288,7 @@ class UpdateResourcePoolRequest(Gs2BasicRequest):
         :param change_level_done_trigger_script: レベル変化完了時 に実行されるGS2-Script
         :type change_level_done_trigger_script: unicode
         """
-        if change_level_done_trigger_script and not (isinstance(change_level_done_trigger_script, str) or isinstance(change_level_done_trigger_script, unicode)):
+        if change_level_done_trigger_script is not None and not (isinstance(change_level_done_trigger_script, str) or isinstance(change_level_done_trigger_script, unicode)):
             raise TypeError(type(change_level_done_trigger_script))
         self.__change_level_done_trigger_script = change_level_done_trigger_script
 
@@ -317,7 +317,7 @@ class UpdateResourcePoolRequest(Gs2BasicRequest):
         :param change_level_cap_trigger_script: レベルキャップ変化時 に実行されるGS2-Script
         :type change_level_cap_trigger_script: unicode
         """
-        if change_level_cap_trigger_script and not (isinstance(change_level_cap_trigger_script, str) or isinstance(change_level_cap_trigger_script, unicode)):
+        if change_level_cap_trigger_script is not None and not (isinstance(change_level_cap_trigger_script, str) or isinstance(change_level_cap_trigger_script, unicode)):
             raise TypeError(type(change_level_cap_trigger_script))
         self.__change_level_cap_trigger_script = change_level_cap_trigger_script
 
@@ -346,7 +346,7 @@ class UpdateResourcePoolRequest(Gs2BasicRequest):
         :param change_level_cap_done_trigger_script: レベルキャップ変化完了時 に実行されるGS2-Script
         :type change_level_cap_done_trigger_script: unicode
         """
-        if change_level_cap_done_trigger_script and not (isinstance(change_level_cap_done_trigger_script, str) or isinstance(change_level_cap_done_trigger_script, unicode)):
+        if change_level_cap_done_trigger_script is not None and not (isinstance(change_level_cap_done_trigger_script, str) or isinstance(change_level_cap_done_trigger_script, unicode)):
             raise TypeError(type(change_level_cap_done_trigger_script))
         self.__change_level_cap_done_trigger_script = change_level_cap_done_trigger_script
 
